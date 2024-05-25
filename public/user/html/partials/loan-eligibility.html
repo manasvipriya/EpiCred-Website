@@ -1,0 +1,82 @@
+<div class="card le">
+    <h4 class="le-head">Check Loan Eligibility</h4>
+    <p class="le-caption">An account will be created with the information provided.</p>
+    <div class="row le-status-wrapper">
+        <div class="col-12 font-14 text-right mb-1">
+            <span class="text-primary" id="leStep">Step 1</span> of 3
+        </div>
+        <div class="col-4">
+            <div class="le-status le-status-one bg-primary"></div>
+        </div>
+        <div class="col-4">
+            <div class="le-status le-status-two"></div>
+        </div>
+        <div class="col-4">
+            <div class="le-status le-status-three"></div>
+        </div>
+    </div>
+    <div class="le-part le-part-one ">
+        <form onsubmit="return false;" class="le-form" id="letPartOne">
+            <div class="form-group">
+                <label for="name" class="font-12 mb-0">Full Name*</label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="John Doe" >
+            </div>
+            <div class="form-group">
+                <label for="email" class="font-12 mb-0">Email Address*</label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="johndoe@email.com">
+            </div>
+            <div class="form-group">
+                <label for="phoneNumber" class="font-12 mb-0">Phone Number*</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control only-number" placeholder="9876543210">
+            </div>
+            <div class="form-group">
+                <label for="dob" class="font-12 mb-0">Date of Birth*</label>
+                <input type="date" id="dob" name="dob" class="form-control dob" placeholder="01/01/1995" maxlength="10">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3" name="letPartOneSubmit" data-next="le-part-two">Next</button>
+        </form>
+    </div>
+    <div class="le-part le-part-two d-none">
+        <form onsubmit="return false;" class="le-form" id="letPartTwo">
+            <div class="form-group">
+                <label for="loanAmount" class="font-12 mb-0">Loan Amount*</label>
+                <input type="text" id="loanAmount" name="loanAmount" class="form-control only-number" placeholder="1500000">
+            </div>
+            <div class="form-group">
+                <label for="preferredCountry" class="font-12 mb-0">Preferred Country*</label>
+                <input type="text" id="preferredCountry" name="preferredCountry" class="form-control" placeholder="USA">
+            </div>
+            <div class="form-group">
+                <label for="preferredCourse" class="font-12 mb-0">Preferred Course*</label>
+                <input type="text" id="preferredCourse" name="preferredCourse" class="form-control" placeholder="Computer Science">
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3" data-next="le-part-three">Next</button>
+        </form>
+    </div>
+    <div class="le-part le-part-three d-none">
+        <form onsubmit="return false;" class="le-form" id="letPartThree">
+            <div class="form-group">
+                <label for="isCollateral" class="font-12 mb-0">Do you have a Co-applicant?*</label>
+                <select name="isCollateral" id="isCollateral" name="isCollateral" class="form-control isCollateral">
+                    <option value="1">Yes</option>
+                    <option value="0">No</option>
+                </select>
+            </div>
+            <div class="form-group collateral-data">
+                <label for="collateralName" class="font-12 mb-0">Co-Applicat Name*</label>
+                <input type="text" id="collateralName" name="collateralName" class="form-control" placeholder="John Doe">
+            </div>
+            <div class="form-group collateral-data">
+                <label for="collateralMonthlyIncome" class="font-12 mb-0">Co-Applicat Salary*</label>
+                <input type="text" id="collateralMonthlyIncome" name="collateralMonthlyIncome" class="form-control" placeholder="1500000">
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" type="checkbox" id="toc" name="toc">
+                <label class="form-check-label font-12 toc-label" for="toc">
+                    I hereby, accept <a href="/privacy-policy">Privacy Policies</a> and <a href="/terms-of-service">Terms of Use</a>
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block mt-3" data-final="true">Submit</button>
+        </form>
+    </div>
+</div>

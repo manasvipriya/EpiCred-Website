@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{{action | title}} User</title>
+
+    {% include "public/admin/html/partials/styles.html" %}
+    <link rel="stylesheet" href="/common/css/index.css" />
+</head>
+
+<body>
+    {% include "public/admin/html/partials/preloader.html" %}
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute"
+        data-boxed-layout="full">
+        {% include "public/admin/html/partials/header.html" %} {% include
+        "public/admin/html/partials/sidebar.html" %}
+
+        <div class="page-wrapper admin-wrapper">
+            {% include "public/admin/html/partials/breadcrumb.html" %}
+
+            <div class="container-fluid">
+                <div class="card p-2">
+                    <h4>{{action | title}} User:</h4>
+                    <input type="hidden" id="id" value="{{user._id}}">
+                    <form class="row" id="form" onsubmit="return false;">
+                        <div class="col-6 form-group">
+                            <label for="">Name*</label>
+                            <input type="text" name="name" id="name" class="form-control" value="{{user.name}}" {{ "disabled" if isView }}>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Email*</label>
+                            <input type="email" name="email" id="email" class="form-control" value="{{user.email}}" {{ "disabled" if isView }}>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Phone Number*</label>
+                            <input type="tel" name="phoneNumber" id="phoneNumber" class="form-control" value="{{user.phoneNumber}}" {{ "disabled" if isView }}>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Date of Birth*</label>
+                            <input type="date" name="dob" id="dob" class="form-control" value="{{user.dob}}" {{ "disabled" if isView }}>
+                        </div>
+                        <div class="col-6 form-group">
+                            <label for="">Active</label>
+                            <select {{ "disabled" if isView }} name="active" id="active" class="form-control">
+                                <option {{ "selected" if not user or user.active }} value="1">Yes</option>
+                                <option {{ "selected" if user and not user.active }} value="0">No</option>
+                            </select>
+                        </div>
+                        {% if isView %}
+                        <div class="col-6 form-group">
+                            <label for="">Verified: </label>
+                            <input type="text" class="form-control" value="{{ 'Yes' if user.verified else 'No' }}" {{ "disabled" if isView }}>
+                        </div>
+                        {% endif %}
+                        <div class="col-12 text-right">
+                            <button type="submit" class="btn btn-primary" {{ "disabled" if isView }}>Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            {% include "public/admin/html/partials/footer.html" %}
+        </div>
+    </div>
+
+    {% include "public/admin/html/partials/scripts.html" %}
+    <script src="/admin/js/crud-user.js"></script>
+</body>
+
+</html>

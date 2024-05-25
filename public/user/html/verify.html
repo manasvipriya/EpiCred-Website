@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epicred - Verify</title>
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/user/css/index.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include "public/admin/html/partials/preloader.html" %}
+
+    {% include "public/user/html/partials/header.html" %}
+    <main class="container mt-4">
+        {% if err.message %}
+        <div class="alert alert-danger" role="alert">
+            <h4 class="alert-heading">Error!</h4>
+            <p class="mb-0">{{err.message}}</p>
+        </div>
+        {% else %}
+        <div class="alert alert-success" role="alert">
+            <h4 class="alert-heading">Well done!</h4>
+            <p class="mb-0">{{data.message}}</p>
+            <div class="text-center py-2">
+                <a href="/user/login" class="btn btn-primary btn-radius px-4">
+                    Go to login
+                </a>
+            </div>
+        </div>
+        {% endif %}
+    </main>
+
+    {% include "public/user/html/partials/footer_v1.html" %}
+    {% include "public/user/html/partials/scripts.html" %}
+</body>
+
+</html>

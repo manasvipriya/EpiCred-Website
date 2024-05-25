@@ -1,0 +1,88 @@
+<footer class="footer border-top pt-4">
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4">
+                <p class="footer-col-head">Links</p>
+                <ul class="footer-links">
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="/" title="Home">Home</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="/about-us" title="About Us">About Us</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="/contact-us" title="Contact Us">Contact Us</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="/repayment-calculator" title="Rapayment Calculator">Repayment Calculator</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="https://blog.Epicred.com" title="Blog">Blog</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+                <p class="footer-col-head">Contact Details</p>
+                <div class="footer-contact d-flex mb-3 mt-4">
+                    <div class="footer-contact-icon">
+                        <i class="fa fa-phone text-white"></i>
+                    </div>
+                    <div class="ml-2 footer-contact-info">
+                        <p class="mb-0 footer-contact-text">Call Us</p>
+                        <p class="mb-0 footer-contact-value">
+                            <a href="tel:{{_contact.phone}}" class="text-decoration-none text-dark" title="Call Us">{{_contact.phone}}</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="footer-contact d-flex">
+                    <div class="footer-contact-icon">
+                        <i class="fa fa-envelope text-white"></i>
+                    </div>
+                    <div class="ml-2 footer-contact-info">
+                        <p class="mb-0 footer-contact-text">Mail Us</p>
+                        <p class="mb-0 footer-contact-value">
+                            <a href="mailto:{{_contact.email}}" class="text-decoration-none text-dark" title="Mail Us">{{_contact.email}}</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-2 col-lg-2 col-md-6 col-12 mb-4">
+                <p class="footer-col-head">Others</p>
+                <ul class="footer-links">
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="/privacy-policy" title="Privacy Policy">Privacy Policy</a>
+                    </li>
+                    <li>
+                        <i class="fa fa-long-arrow-alt-right mr-1"></i> <a href="/terms-of-service" title="Terms of Use">Terms of Use</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-xl-3 col-lg-3 col-md-6 col-12 mb-4">
+                
+                <div class="footer-logo mb-4 mt-2">
+                    <img src="/images/epicred-logo.png" alt="Epicred">
+                </div>
+                <div class="footer-social">
+                    <!-- <a href="" target="_blank" class="d-none">
+                        <i class="fab fa-facebook-f"></i>
+                    </a> -->
+                    <a href="https://wa.me/{{_contact.phone}}" target="_blank" title="connect on whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="{{_contact.linkedin}}" target="_blank" title="connect on linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="{{_contact.instagram}}" target="_blank" title="connect on instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                </div>
+                
+            </div>
+            
+            <div class="col-12 footer-text-copy mb-3 text-center">
+                Copyrights@{{_current_year}} - All Rights Reserved
+            </div>
+        </div>    
+    </div>
+</footer>

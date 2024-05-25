@@ -1,0 +1,44 @@
+.le {
+    border-radius: 20px;
+    padding: 50px 43px 35px 43px;
+}
+
+.le-head {
+    margin-bottom: 11px;
+    font-size: 22px;
+}
+
+.le-caption {
+    font-size: 14px;
+    line-height: 22px;
+}
+
+.le input, .le .btn {
+    border-radius: 8px;
+}
+
+.le .btn {
+    font-size: 15px;
+}
+
+
+.le form {
+    display: flex;
+    flex-direction: column;
+}
+
+.le-status {
+    height: 4px;
+    background-color: grey;
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.le-status-wrapper {
+    margin-bottom: 40px;
+    margin-top: 8px;
+}
+
+.toc-label {
+    
+}

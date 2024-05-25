@@ -1,0 +1,51 @@
+<aside class="left-sidebar" data-sidebarbg="skin6">
+    <!-- Sidebar scroll-->
+    <div class="scroll-sidebar">
+        <!-- Sidebar navigation-->
+        <nav class="sidebar-nav">
+            <ul id="sidebarnav">
+                {% for parent in dashboard_urls %} {% if parent.children %}
+                <li class="sidebar-item">
+                    <a class="sidebar-link has-arrow waves-effect waves-dark sidebar-link">
+                        <i class='fa {{ parent.icon if parent.icon else "fa fa-list" }}'></i>
+                        <span class="hide-menu">{{parent.name}}</span>
+                    </a>
+                    <ul aria-expanded="false" class="collapse first-level">
+                        {% for child in parent.children %}
+                        <li class="sidebar-item">
+                            <a href="{{child.url}}" class="sidebar-link">
+                                <i
+                                    class='fa {{ child.icon if child.icon else "fa fa-arrow-right" }}'
+                                ></i>
+                                <span class="hide-menu">{{child.name}}</span>
+                            </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+                {% else %}
+                <li class="sidebar-item">
+                    <a
+                        class="sidebar-link waves-effect waves-dark sidebar-link"
+                        href="{{parent.url}}"
+                    >
+                        <i class='fa {{ parent.icon if parent.icon else "fa fa-home" }}'></i>
+                        <span class="hide-menu">{{parent.name}}</span>
+                    </a>
+                </li>
+                {% endif %} {% endfor %}
+                <li class="sidebar-item">
+                    <div
+                        class="sidebar-link waves-effect waves-dark sidebar-link"
+                        onclick="adminLogout()"
+                    >
+                        <i class="fa fa-power-off"></i>
+                        <span class="hide-menu">Logout</span>
+                    </div>
+                </li>
+            </ul>
+        </nav>
+        <!-- End Sidebar navigation -->
+    </div>
+    <!-- End Sidebar scroll-->
+</aside>

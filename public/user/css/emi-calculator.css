@@ -1,0 +1,171 @@
+.cal-long-text {
+    width: 90px;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    font-weight: 600;
+}
+
+.cal-short-text {
+    width: 40px;
+    border: none;
+    border-bottom: 1px solid grey;
+    outline: none;
+    font-weight: 600;
+}
+
+.amount-text {
+    font-size: 18px;
+}
+
+.calculator-result {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.legend {
+    display: flex;
+    align-items: center;
+}
+
+.legend .dot {
+    height: 10px;
+    width: 10px;
+    display: block;
+    margin-right: 10px;
+}
+
+.legend .principal {
+    background-color: #E34731;
+}
+
+.legend .interest {
+    background-color: #F98575;
+}
+
+.calculator-wrapper {
+    padding: 90px 0 90px 0;
+    background-image: url(/images/calculator-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.emi-section {
+    width: 100%;
+    margin-bottom: 100px;
+}
+
+.calculator-card {
+    padding: 50px 80px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px 0px #0000001F;
+
+    &.home-page-calculator {
+        width: 100%;
+    }
+}
+
+.title {
+    font-size: 24px;
+}
+
+.title-wrapper {
+    padding-bottom: 50px;
+}
+
+.calculator-result-mobile .end-border {
+    width: 1px;
+    background-color: lightgray;
+    height: 45px;
+}
+
+.show-mobile {
+    display: none !important;
+}
+
+.summary-table th {
+    background: #F1F3F9;
+    border: none;
+}
+
+.summary-table td {
+    border: none;
+}
+
+.summary-table tr:nth-child(odd) {
+    background-color: #F8F9FC !important;
+    border: none;
+}
+
+.summary-table-rows-hidden {
+    display: none;
+}
+
+#showMoreRows {
+    cursor: pointer;
+}
+
+.content-title {
+    margin-top: 35px;
+}
+
+@media screen and (max-width: 768px) {
+    .calculator-result {
+        flex-direction: row;
+    }
+
+    .calculator-card {
+        padding: 50px 40px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+
+    .calculator-card {
+        padding: 25px;
+    }
+
+    .calculator-wrapper {
+        padding: 25px 0;
+    }
+
+    .title {
+        font-size: 17px;
+    }
+
+    .title-wrapper p {
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .title-wrapper {
+        padding-bottom: 0;
+    }
+
+    .hide-mobile {
+        display: none;
+    }
+
+    .show-mobile {
+        display: flex !important;
+    }
+
+    .calculator {
+        flex-direction: column-reverse;
+    }
+
+    .calculator-result-mobile {
+        padding: 50px 25px 0 25px;
+    }
+
+    .content-title {
+        text-align: center;
+        font-size: 17px;
+        padding-top: 15px;
+    }
+
+    .content-sub-title {
+        font-size: 17px;
+    }
+}

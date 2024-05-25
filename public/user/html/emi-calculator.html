@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Loan Repayment Calculator</title>
+    <meta name="description"
+        content="Use the Epicred Loan Repayment Calculator to effortlessly estimate your loan repayments. Plan your finances wisely and stay on track with personalized calculations from Epicred. Take the guesswork out of loans and make informed financial decisions today!">
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/user/css/emi-calculator.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include "public/user/html/partials/header.html" %}
+    <main>
+        <div class="calculator-wrapper">
+            <div class="container">
+                <div class="card border-0 calculator-card">
+                    <div class="title-wrapper">
+                        <h1 class="title text-center">Loan Repayment Calculator</h1>
+                    <p class="m-0 text-center">The displayed EMI amount is approximate & is subject to change based on various factors.</p>
+                    </div>
+                    <div class="row calculator">
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                            <div class="form-group mb-4">
+                                <label class="mb-0 d-flex justify-content-between">
+                                    <h6 class="font-16 font-normal">Loan Amount</h6>
+                                    <span class="font-bold">
+                                        ₹<input type="number" class="cal-long-text" id="loanAmountValue" value="{{intial_data.loanAmount.value}}">
+                                    </span>
+                                </label>
+                                <input type="range" class="form-range w-100" id="loanAmount" data-value="#loanAmountValue" value="{{intial_data.loanAmount.value}}"
+                                    min="{{intial_data.loanAmount.min}}" max="{{intial_data.loanAmount.max}}" step="{{intial_data.loanAmount.step}}">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="mb-0 d-flex justify-content-between">
+                                    <h6 class="font-16 font-normal">Interest(p.a.)</h6>
+                                    <span class="font-bold">
+                                        <input type="number" class="cal-short-text" id="interestValue" value="{{intial_data.interest.value}}">
+                                        <span class="text-muted font-14">%</span>
+                                    </span>
+                                </label>
+                                <input type="range" class="form-range w-100" id="interest" data-value="#interestValue" value="{{intial_data.interest.value}}"
+                                    min="{{intial_data.interest.min}}" max="{{intial_data.interest.max}}">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="mb-0 d-flex justify-content-between">
+                                    <h6 class="font-16 font-normal">Loan Duration</h6>
+                                    <span class="font-bold">
+                                        <input type="number" class="cal-short-text" id="loanDurationValue" value="{{intial_data.loanDuration.value}}">
+                                        <span class="text-muted font-14">Years</span>
+                                    </span>
+                                </label>
+                                <input type="range" class="form-range w-100" id="loanDuration" data-value="#loanDurationValue" value="{{intial_data.loanDuration.value}}"
+                                    min="{{intial_data.loanDuration.min}}" max="{{intial_data.loanDuration.max}}">
+                            </div>
+                            <div class="form-group mb-4">
+                                <label class="mb-0 d-flex justify-content-between">
+                                    <h6 class="font-16 font-normal">Course Duration</h6>
+                                    <span class="font-bold">
+                                        <input type="number" class="cal-short-text" id="courseDurationValue" value="{{intial_data.courseDuration.value}}">
+                                        <span class="text-muted font-14">Months</span>
+                                    </span>
+                                </label>
+                                <input type="range" class="form-range w-100" id="courseDuration" data-value="#courseDurationValue" value="{{intial_data.courseDuration.value}}"
+                                    min="{{intial_data.courseDuration.min}}" max="{{intial_data.courseDuration.max}}">
+                            </div>
+                            <div class="form-group mb-1">
+                                <label class="mb-0 d-flex justify-content-between">
+                                    <h6 class="font-16 font-normal">Grace Period</h6>
+                                    <span class="font-bold">
+                                        <input type="number" class="cal-short-text" id="gracePeriodValue" value="{{intial_data.gracePeriod.value}}">
+                                        <span class="text-muted font-14">Months</span>
+                                    </span>
+                                </label>
+                                <input type="range" class="form-range w-100" id="gracePeriod" data-value="#gracePeriodValue" value="{{intial_data.gracePeriod.value}}"
+                                    min="{{intial_data.gracePeriod.min}}" max="{{intial_data.gracePeriod.max}}">
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 calculator-result-container hide-mobile">
+                            <div class="row calculator-result pl-4">
+                                <div class="col-xl-7 col-lg-7 col-md-12 col-12 form-group d-flex flex-column mb-4">
+                                    <div class="legend">
+                                        <span class="dot principal"></span> <span>Principle Amount</span>
+                                    </div>
+                                    <div class="legend">
+                                        <span class="dot interest"></span> <span>Total Interest</span>
+                                    </div>
+                                </div>
+                                <div class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column">
+                                    <label class="mb-0 font-16">Principal Amount</label>
+                                    <label class="font-bold amount-text principalAmount" id="principalAmount">₹ 100000</label>
+                                </div>
+                                <div class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column">
+                                    <label class="mb-0 font-16">Total Interest</label>
+                                    <label class="font-bold amount-text totalInterestCharged" id="totalInterestCharged">₹ 100000</label>
+                                </div>
+                                <div class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column">
+                                    <label class="mb-0 font-16">Total Amount</label>
+                                    <label class="font-bold amount-text totalAmount" id="totalAmount">₹ 100000</label>
+                                </div>
+                                <div class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column">
+                                    <label class="mb-0 font-16">Monthly EMI</label>
+                                    <label class="font-bold amount-text emiPerMonth" id="emiPerMonth">₹ 35,123</label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-4 col-lg-4 col-md-12 col-sm-6 col-12 chart-wrapper ">
+                            <div id="chart"></div>
+                            <div class="col-12 form-group d-flex flex-row mb-4 show-mobile">
+                                <div class="legend">
+                                    <span class="dot principal"></span> <span>Principle Amount</span>
+                                </div>
+                                <div class="legend ml-4">
+                                    <span class="dot interest"></span> <span>Total Interest</span>
+                                </div>
+                            </div>
+                            <div class="col-12 text-center hide-mobile">
+                                <a href="/check-loan-eligibility" class="btn btn-primary px-4 py-2 font-14">Apply Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="show-mobile">
+                    <div class="row calculator-result-mobile">
+                        <div class="col-5 mb-3">
+                            <label for="" class="font-13 mb-0">Principal Amount</label>
+                            <p class="m-0 font-13 font-bold principalAmount">100000</p>
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                            <div class="end-border"></div>
+                        </div>
+                        <div class="col-5 mb-3">
+                            <label for="" class="font-13 mb-0">Total Interest</label>
+                            <p class="m-0 font-13 font-bold totalInterestCharged">100000</p>
+                        </div>
+                        <div class="col-5 mb-3">
+                            <label for="" class="font-13 mb-0">Total Amount</label>
+                            <p class="m-0 font-13 font-bold totalAmount">100000</p>
+                        </div>
+                        <div class="col-2 d-flex justify-content-center">
+                            <div class="end-border"></div>
+                        </div>
+                        <div class="col-5 mb-3">
+                            <label for="" class="font-13 mb-0">Monthly EMI</label>
+                            <p class="m-0 font-13 font-bold emiPerMonth">100000</p>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <a class="btn btn-primary btn-block px-4 py-2 font-15" href="/check-loan-eligibility">
+                                Apply Now
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="row mt-2">
+                <div class="col-12 mb-4">
+                    <h3 class="mb-3 content-title">Loan Repayment Summary</h1>
+                    <div class="table-responsive card border-0">
+                        <table id="repaymentTable" class="table table-striped summary-table">
+                            <tr>
+                                <th>Month</th>
+                                <th>Opening Balance (₹)</th>
+                                <th>Interest Paid (₹)</th>
+                                <th>Principal Repaid (₹)</th>
+                                <th>Closing Balance (₹)</th>
+                                <th>Loan Paid (%)(₹)</th>
+                              </tr>
+                        </table>
+                    </div>
+                    <div class="text-right show-more-rows">
+                        <label class="text-primary" id="showMoreRows">Show more</button>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <h3 class="mb-3 content-sub-title">Education Repayment Calculator</h3>
+                    <p>
+                        The purpose of this student loan repayment calculator is to offer estimates for planning purposes exclusively. The results depend on a standard repayment plan,
+                        where you make a consistent monthly payment over a specified duration, determined by your loan term and the prepayment scenario you provide above.
+                    </p>
+                    <p>
+                        The student loan repayment calculator utilizes a fixed interest rate and does not consider variable interest rates. It assumes that your loan is presently in
+                        the repayment phase. However, it is essential to note that we cannot guarantee the accuracy or applicability of the calculator to your specific circumstances.
+                        For a thorough analysis of your overall financial situation, we highly recommend seeking assistance from a qualified professional.
+                    </p>
+                </div>
+                <div class="col-12">
+                    <h3 class="mb-3 content-sub-title">Advantages Of Repayment Calculator</h3>
+                    <p>
+                        A repayment calculator for education loans offers numerous advantages that can greatly benefit borrowers. Here are some of the key advantages:
+                    </p>
+                    <p>
+                    <ol class="content-list">
+                        <li class="mb-4">
+                            <b>Accurate Loan Estimates:</b> A repayment calculator provides precise estimates of monthly payments, total interest costs, and the overall loan amount
+                            based on
+                            various factors such as the loan amount, interest rate, and repayment term. This accuracy helps borrowers plan their finances more effectively.
+                        </li>
+                        <li class="mb-4">
+                            <b>Financial Planning:</b> By using a repayment calculator, borrowers can develop a realistic financial plan. They can assess how different loan amounts,
+                            interest
+                            rates, and repayment periods will affect their budget, enabling them to make informed decisions about the most suitable loan option for their financial
+                            situation.
+                        </li>
+                        <li class="mb-4">
+                            <b>Easy Comparison of Options:</b> Borrowers can compare different loan scenarios side by side using the calculator. This empowers them to evaluate multiple
+                            loan
+                            offers from various lenders and identify the most cost-effective and favorable option.
+                        </li>
+                        <li class="mb-4">
+                            <b>Budget Management:</b> With a clear understanding of their monthly repayment amount, borrowers can incorporate it into their budget. This helps them
+                            ensure that
+                            they can comfortably manage their loan obligations while meeting other financial commitments.
+                        </li>
+                        <li class="mb-4">
+                            <b>Prepayment Analysis:</b> Many repayment calculators allow borrowers to explore the impact of making extra payments or paying off the loan early. This
+                            feature
+                            helps borrowers strategize and potentially save on interest costs by accelerating their loan repayment.
+                        </li>
+                        <li class="mb-4">
+                            <b>Quick and Convenient:</b> Using a repayment calculator is quick and convenient. Borrowers can access these calculators online, input their loan details,
+                            and get
+                            instant results, allowing for efficient and hassle-free planning.
+                        </li>
+                        <li class="mb-4">
+                            <b>Avoiding Surprises:</b> Understanding the total cost of the loan and the monthly repayment amount helps borrowers avoid unexpected financial surprises
+                            during
+                            the repayment period. It ensures that they are well-prepared for the financial commitment they are undertaking.
+                        </li>
+                        <li class="mb-4">
+                            <b>Empowerment in Decision-Making:</b> Repayment calculators empower borrowers to take control of their financial decisions. By providing them with
+                            comprehensive
+                            information about their loan options, borrowers can make choices that align with their long-term financial goals.
+                        </li>
+                        <li class="mb-4">
+                            <b>Reduces Stress and Uncertainty:</b> Dealing with complex loan calculations and uncertainty about repayment can be stressful. A repayment calculator
+                            alleviates
+                            these concerns by offering clear and transparent information.
+                        </li>
+                        <li class="mb-4">
+                            <b>No Obligation:</b> Using a repayment calculator is a no-obligation way to explore loan options. Borrowers can experiment with different scenarios without
+                            committing to any specific loan offer.
+                        </li>
+                    </ol>
+                    </p>
+                    <p class="mb-4">
+                        In conclusion, a repayment calculator for education loans offers significant advantages by providing accurate loan estimates, facilitating financial planning,
+                        enabling easy comparisons, and empowering borrowers to make well-informed decisions. It is an essential tool for students and their families to navigate the
+                        loan process with confidence and clarity.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include "public/user/html/partials/footer_v1.html" %}
+    {% include "public/user/html/partials/scripts.html" %}
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/user/js/emi-calculator.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Users</title>
+
+    {% include "public/admin/html/partials/styles.html" %}
+    <link rel="stylesheet" href="/common/css/index.css" />
+</head>
+
+<body>
+    {% include "public/admin/html/partials/preloader.html" %}
+
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute"
+        data-boxed-layout="full">
+        {% include "public/admin/html/partials/header.html" %} {% include
+        "public/admin/html/partials/sidebar.html" %}
+
+        <div class="page-wrapper admin-wrapper">
+            {% include "public/admin/html/partials/breadcrumb.html" %}
+
+            <div class="container-fluid">
+                <div class="card primary-shadow p-2 mh-100">
+                    <div class="d-flex justify-content-between mb-3">
+                        <h4>Users:</h4>
+                        <a href="/admin/user/create" class="btn btn-primary btn-radius" target="_blank">
+                            <i class="fa fa-plus"></i> Add User
+                        </a>
+                    </div>
+
+                    <div class="table-responsive">
+                        <table class="table table-striped" id="table">
+                            
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+
+
+            {% include "public/admin/html/partials/footer.html" %}
+        </div>
+    </div>
+
+    {% include "public/admin/html/partials/scripts.html" %}
+    <script src="/admin/js/users.js"></script>
+</body>
+
+</html>

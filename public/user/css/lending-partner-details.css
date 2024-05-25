@@ -1,0 +1,32 @@
+.list {
+    padding-left: 20px;
+}
+
+.list li {
+    padding: 10px 0;
+}
+
+.summary-title {
+    margin: 20px 0;
+}
+
+.summary-table tr:nth-child(odd) {
+    background-color: white !important;
+} 
+
+
+.summary-table tr:nth-child(even) {
+    background-color: #F8F9FC !important;
+} 
+
+.logo-wrapper {
+    padding: 50px 0;
+    text-align: center;
+    background: #F7F9FE;
+    filter: grayscale(1);
+}
+
+.logo-wrapper img{
+    height: 65px;
+    width: auto;
+}

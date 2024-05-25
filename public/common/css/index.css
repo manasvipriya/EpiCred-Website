@@ -1,0 +1,10 @@
+.stat-card {
+    color: white;
+    background-color: var(--purple);
+    border-radius: 4px;
+}
+
+.stat-card h6 {
+    font-size: 24px;
+    text-align: right;
+}

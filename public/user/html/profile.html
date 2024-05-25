@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epicred - Profile</title>
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/common/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include "public/admin/html/partials/preloader.html" %}
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute"
+        data-boxed-layout="full">
+        {% include "public/user/html/partials/topbar.html" %} {% include
+        "public/user/html/partials/sidebar.html" %}
+
+        <main class="page-wrapper admin-wrapper">
+
+            <div class="container-fluid">
+                <h4>My Profile:</h4>
+        <div class="card mt-3 primary-shadow border-0 p-3">
+            <form class="row" id="form" onsubmit="return false;">
+                <input type="hidden" id="id" value="{{data.profile._id}}">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12 form-group">
+                    <label for="name" class="font-bold">Name:*</label>
+                    <input type="text" class="form-control only-text" name="name" id="name" placeholder="full name" value="{{data.profile.name}}" maxlength="50">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12 form-group">
+                    <label for="dob" class="font-bold">Date of Birth:*</label>
+                    <input type="date" class="form-control" name="dob" id="dob" placeholder="dob" value="{{data.profile.dob}}" maxlength="10">
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12 form-group">
+                    <label for="email" class="font-bold">Email:*</label>
+                    <input type="email" class="form-control" name="email" id="email" placeholder="email" value="{{data.profile.email}}" disabled>
+                </div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-12 form-group">
+                    <label for="phoneNumber" class="font-bold">Phone Number:*</label>
+                    <input type="tel" class="form-control only-number" name="phoneNumber" id="phoneNumber" placeholder="phone number" value="{{data.profile.phoneNumber}}" maxlength="10">
+                </div>
+                <div class="col-12 text-right">
+                    <button type="submit" class="btn btn-primary btn-radius btn-gradient font-bold px-4 mt-2">Update</button>
+                </div>
+            </form>
+        </div>
+            </div>
+        </main>
+    </div>
+    {% include "public/user/html/partials/scripts.html" %}
+    <script src="/common/js/sidebarmenu.js"></script>
+    <script src="/user/js/profile.js"></script>
+</body>
+
+</html>

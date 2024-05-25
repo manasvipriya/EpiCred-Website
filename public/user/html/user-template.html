@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epicred - Dashboard</title>
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/common/css/style.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include "public/admin/html/partials/preloader.html" %}
+    <div id="main-wrapper" data-layout="vertical" data-navbarbg="skin6" data-sidebartype="full" data-sidebar-position="absolute" data-header-position="absolute"
+        data-boxed-layout="full">
+        {% include "public/user/html/partials/topbar.html" %} {% include
+        "public/user/html/partials/sidebar.html" %}
+
+        <main class="page-wrapper admin-wrapper">
+
+            <div class="container-fluid">
+            </div>
+        </main>
+    </div>
+    {% include "public/user/html/partials/scripts.html" %}
+    <script src="/common/js/sidebarmenu.js"></script>
+</body>
+
+</html>

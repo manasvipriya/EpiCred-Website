@@ -1,0 +1,73 @@
+{% if _env.analytics %}
+<!-- Google tag (gtag.js) -->
+<!-- Google Tag Manager -->
+<script>(function (w, d, s, l, i) {
+    w[l] = w[l] || []; w[l].push({
+      'gtm.start':
+        new Date().getTime(), event: 'gtm.js'
+    }); var f = d.getElementsByTagName(s)[0],
+      j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : ''; j.async = true; j.src =
+        'https://www.googletagmanager.com/gtm.js?id=' + i + dl; f.parentNode.insertBefore(j, f);
+  })(window, document, 'script', 'dataLayer', 'GTM-5RZH93VJ');</script>
+<!-- End Google Tag Manager -->
+{% endif %}
+<header class="border-bottom">
+  <div class="container p-0 custom-navbar">
+    <nav class="navbar navbar-expand-lg navbar-light">
+      <a class="navbar-brand" href="/">
+        <img src="/images/epicred-logo.png" alt="Epicred" class="logo" height="50" width="170">
+      </a>
+      <a class="btn btn-outline-primary btn-sm font-12 show-tab ml-auto mr-2 font-bold" href="/check-loan-eligibility">Start Loan Application</a>
+      <button class="navbar-toggler p-0 border-0" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon "></span>
+      </button>
+      <div class="collapse navbar-collapse ml-auto" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link font-bold {{ " active" if path=="/" }}" href="/">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-bold" href="https://blog.epicred.in">Blog</a>
+          </li>
+          {% if not header.user %}
+          <li class="nav-item">
+            <a class="nav-link font-bold {{ " active" if path=="/about-us" }}" href="/about-us">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-bold {{ " active" if path=="/contact-us" }}" href="/contact-us">Contact Us</a>
+          </li>
+          <li class="nav-item ">
+            <a class="nav-link btn btn-outline-dark header-btns px-4 login-btn" href="/user/login">
+              <span>Login</span>
+            </a>
+          </li>
+          <li class="nav-item font-bold hide-tab">
+            <a class="nav-link btn btn-primary text-white header-btns px-4 font-bold" href="/check-loan-eligibility">Start Loan Application</a>
+          </li>
+          <li class="nav-item call-us">
+            <img src="/images/phone-call.png" class="call-icon" />
+            <span class="nav-link font-bold">+91 - 9877889609</span>
+          </li>
+          {% else %}
+          <li class="nav-item">
+            <a class="nav-link font-bold" href="/user/dashboard">
+              <i class="fa fa-list"></i> <span>My Applications</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-bold" href="/user/profile">
+              <i class="fa fa-user"></i> <span>Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link font-bold" href="#" onclick="userLogout()">
+              <i class="fa fa-sign-out-alt"></i> <span>Logout</span>
+            </a>
+          </li>
+          {% endif %}
+        </ul>
+      </div>
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{data.title}} Lending Partner</title>
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/user/css/lending-partner-details.css" rel="stylesheet">
+</head>
+
+<body>
+    {% include "public/user/html/partials/header.html" %}
+    <div class="logo-wrapper">
+        <img src="/images/{{data.logo}}" alt="data.title">
+    </div>
+    <main class="container">
+        <h3 class="mb-3 text-center my-4">{{data.title}}</h3>
+        <p>{{data.content}}</p>
+        <ul class="list">
+            {% for item in data.description %}
+            <li>{{item.text | safe}}</li>
+            {% endfor %}
+        </ul>
+        <p class="mb-4">{{data.footer}}</p>
+        <h4 class="summary-title">Summary</h4>
+        <div class="table-responsive mb-4">
+            <table class="table table-striped summary-table">
+                <tbody>
+                    {% for key, value in data.table %}
+                    <tr>
+                        <th class="border-0">{{key}}</th><td class="border-0">{{value}}</td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    {% include "public/user/html/partials/footer_v1.html" %}
+    {% include "public/user/html/partials/scripts.html" %}
+</body>
+
+</html>

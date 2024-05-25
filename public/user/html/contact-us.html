@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Contact Us - Epicred</title>
+    <meta name="description" content="Contact Us for Tailored Financial Support. Empowering Your Educational Dreams with Hassle-Free Loan Solutions. Reach Out Today to Begin Your Journey!">
+
+    {% include "public/user/html/partials/styles.html" %}
+</head>
+
+<body>
+    {% include "public/user/html/partials/header.html" %}
+    <main class="container mt-4">
+        <div class="col-12 text-center">
+            <h3 class="mb-0">Contact us</h3>
+            <p>Questions not answered yet? We are here to help!</p>
+        </div>
+        <div class="row align-items-center flex-column">
+            <div class="col-xl-8 col-lg-8 col-md-12 col-12 mt-4">
+                <div class="card primary-show p-2">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 d-flex justify-content-center align-items-center">
+                            <i class="fa fa-phone fa-2x"></i>
+                        </div>
+                        <div class="col-12 col-xl-7 col-lg-7 col-md-6 d-flex flex-column py-2">
+                            <h4 class="mb-0">Call</h4>
+                            <p class="mb-0">Everyday(except holidays): 9 AM - 5PM</p>
+                        </div>
+                        <div class="col-12 col-xl-3 col-lg-3 col-md-3">
+                            <a href="tel:{{_contact.phone}}" class="btn btn-primary btn-gradient font-bold w-100">Call Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xl-8 col-lg-8 col-md-12 col-12 mt-4">
+                <div class="card primary-show p-2">
+                    <div class="row align-items-center">
+                        <div class="col-12 col-xl-2 col-lg-2 col-md-3 d-flex justify-content-center align-items-center">
+                            <i class="fa fa-inbox fa-2x"></i>
+                        </div>
+                        <div class="col-12 col-xl-7 col-lg-7 col-md-6 d-flex flex-column py-2">
+                            <h4 class="mb-0">Email</h4>
+                            <p class="mb-0">Typically reply time: with in a day or two</p>
+                            <p class="mb-0">Everyday(except holidays): 9 AM - 5PM</p>
+                        </div>
+                        <div class="col-12 col-xl-3 col-lg-3 col-md-3">
+                            <a href="mailto:{{_contact.email}}" class="btn btn-primary btn-gradient font-bold w-100">Email Us</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    {% include "public/user/html/partials/footer_v1.html" %}
+    {% include "public/user/html/partials/scripts.html" %}
+</body>
+
+</html>

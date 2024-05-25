@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>{{action | title}} Loan Application</title>
+
+        {% include "public/admin/html/partials/styles.html" %}
+    </head>
+
+    <body>
+        {% include "public/admin/html/partials/preloader.html" %}
+
+        <div
+            id="main-wrapper"
+            data-layout="vertical"
+            data-navbarbg="skin6"
+            data-sidebartype="full"
+            data-sidebar-position="absolute"
+            data-header-position="absolute"
+            data-boxed-layout="full"
+        >
+            {% include "public/admin/html/partials/header.html" %} {% include
+            "public/admin/html/partials/sidebar.html" %}
+
+            <div class="page-wrapper admin-wrapper">
+                {% include "public/admin/html/partials/breadcrumb.html" %}
+
+                <div class="container-fluid">
+                    <div class="card p-2">
+                        <h4>{{action | title}} Loan Application</h4>
+                        {% if isView %}
+                        <div class="row">
+                            <div class="col-6 form-group">
+                                <label for="name" class="font-bold">Name:</label>
+                                <input type="text" disabled value="{{user.name}}" class="form-control">
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="email" class="font-bold">Email:</label>
+                                <input type="text" disabled value="{{user.email}}" class="form-control">
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="phone" class="font-bold">Phone:</label>
+                                <input type="text" disabled value="{{user.phoneNumber}}" class="form-control">
+                            </div>
+                        </div>
+                        {% endif %}
+                        <form onscroll="return false;" id="form" class="row">
+                            <input type="hidden" name="id" id="id" value="{{loanApplication._id}}">
+                            <div class="col-6 form-group">
+                                <label for="" class="font-bold">Preferred Country*</label>
+                                <input type="text" name="preferredCountry" id="preferredCountry" class="form-control" value="{{loanApplication.preferredCountry}}" {{ "disabled" if isView }}>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="" class="font-bold">Preferred Course*</label>
+                                <input type="text" name="preferredCourse" id="preferredCourse" class="form-control" value="{{loanApplication.preferredCourse}}" {{ "disabled" if isView }}>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="" class="font-bold">Loan Amount*</label>
+                                <input type="number" name="loanAmount" id="loanAmount" class="form-control" value="{{loanApplication.loanAmount}}" {{ "disabled" if isView }}>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="isCollateral" class="font-bold">Do you have collateral?*</label>
+                                <select name="isCollateral" id="isCollateral" name="isCollateral" class="form-control" {{ "disabled" if isView }}>
+                                    <option value="0" {{ "selected" if not loanApplication or not loanApplication.isCollateral }}>No</option>
+                                    <option value="1" {{ "selected" if loanApplication and loanApplication.isCollateral }}>Yes</option>
+                                </select>
+                            </div>
+                            <div class="col-6 form-group collateral-data {{ 'd-none' if not loanApplication and not loanApplication.isCollateral }}">
+                                <label for="collateralName" class="font-bold">Co-application Name*</label>
+                                <input type="text" id="collateralName" name="collateralName" class="form-control" placeholder="enter collateral name" value="{{loanApplication.collateralName}}" {{ "disabled" if isView }}>
+                            </div>
+                            <div class="col-6 form-group collateral-data {{ 'd-none' if not loanApplication and not loanApplication.isCollateral }}">
+                                <label for="collateralMonthlyIncome" class="font-bold">Co-application Monthly Income*</label>
+                                <input type="number" id="collateralMonthlyIncome" name="collateralMonthlyIncome" class="form-control" placeholder="enter collateral montly income" value="{{loanApplication.collateralMonthlyIncome}}" {{ "disabled" if isView }}>
+                            </div>
+                            <div class="col-6 form-group">
+                                <label for="status" class="font-bold">Status</label>
+                                <select name="status" id="status" class="form-control" {{ "disabled" if isView }}>
+                                    {% for status in statuses %}
+                                    <option value="{{status}}" {{ "selected" if loanApplication.status === status }}>{{status}}</option>
+                                    {% endfor %}
+                                </select>
+                            </div>
+                            <div class="col-12 form-group">
+                                <label for="" class="font-bold">Comments</label>
+                                <textarea name="comments" id="comments" class="form-control" {{ "disabled" if isView }}>{{loanApplication.comments}}</textarea>
+                            </div>
+                            <div class="col-12 text-right">
+                                <button type="submit" class="btn btn-primary" {{ "disabled" if isView }}>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                {% include "public/admin/html/partials/footer.html" %}
+            </div>
+        </div>
+
+        {% include "public/admin/html/partials/scripts.html" %}
+        <script src="/admin/js/crud-loan-application.js"></script>
+    </body>
+</html>

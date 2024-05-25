@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Epicred - Check Loan Eligibility</title>
+    <meta name="description"
+        content="Check Student Loan Eligibility with Epicred - Your Key to Educational Pursuits. Empowering Your Academic Journey with Hassle-Free Assessments. Start Planning Your Future Today!">
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/user/css/check-loan-eligibility.css" rel="stylesheet">
+    <link href="/user/css/loan-eligibility.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include "public/admin/html/partials/preloader.html" %}
+
+    {% include "public/user/html/partials/header.html" %}
+    <main class="position-relative">
+        <div class="bg-wrapper">
+            <div class="container check-card-wrapper">
+                <div class="card px-4 py-2 check-card">
+                    <div class="title-wrapper">
+                        <h3 class="mt-2 mb-2 text-center">Check your eligibility</h3>
+                        <p class="text-center font-14 m-0">An account will be created with the information provided.</p>
+                    </div>
+                    <form class="row pt-3 px-4" id="form" action="" method="post" onsubmit="return false;">
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="name" class="font-12">Full Name*</label>
+                                    <input type="text" id="name" name="name" class="form-control only-text" placeholder="john doe" maxlength="50">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="email" class="font-12">Email*</label>
+                                    <input type="text" id="email" name="email" class="form-control" placeholder="user@email.com" maxlength="50">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="phoneNumber" class="font-12">Phone Number*</label>
+                                    <input type="tel" id="phoneNumber" name="phoneNumber" class="form-control only-number" placeholder="98712543210" maxlength="10">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="dob" class="font-12">Date of birth*</label>
+                                    <input type="date" id="dob" name="dob" class="form-control dob" placeholder="01/01/1995" maxlength="10">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="loanAmount" class="font-12">Loan Amount*</label>
+                                    <input type="number" id="loanAmount" name="loanAmount" class="form-control only-number" placeholder="1500000" maxlength="8">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="preferredCourse" class="font-12">Preferred Course Name*</label>
+                                    <input type="text" id="preferredCourse" name="preferredCourse" class="form-control only-text" placeholder="Computer Science" maxlength="50">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="preferredCountry" class="font-12">Preferred Country Name*</label>
+                                    <input type="text" id="preferredCountry" name="preferredCountry" class="form-control only-text" placeholder="USA" maxlength="50">
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-4">
+                            <div class="row">
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group">
+                                    <label for="isCollateral" class="font-12">Do you have co-applicant?*</label>
+                                    <select name="isCollateral" id="isCollateral" name="isCollateral" class="form-control isCollateral">
+                                        <option value="1">Yes</option>
+                                        <option value="0">No</option>
+                                    </select>
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group collateral-data">
+                                    <label for="collateralName" class="font-12">Co-applicant Name*</label>
+                                    <input type="text" id="collateralName" name="collateralName" class="form-control only-text" placeholder="prabhu" maxlength="50">
+                                </div>
+                                <div class="col-xl-12 col-lg-12 col-md-12 col-12 form-group collateral-data">
+                                    <label for="collateralMonthlyIncome" class="font-12">Co-applicant Monthly Income*</label>
+                                    <input type="number" id="collateralMonthlyIncome" name="collateralMonthlyIncome" class="form-control only-number" placeholder="30000" maxlength="8">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12">
+                            <label for="toc" class="d-flex align-items-center">
+                                <input type="checkbox" name="toc" id="toc">
+                                <span class="ml-2">
+                                    I hereby, accept <a href="/privacy-policy">Privacy Policies</a> and <a href="/terms-of-service">Terms of Use</a>
+                                </span>
+                            </label>
+                            <p class="m-0"><b>Note:</b> An account will be created with the information provided.</p>
+                        </div>
+                        <div class="col-12 mb-4 text-right">
+                            <button class="btn btn-primary mt-2" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="bg-wrapper-mobile">
+            <div class="mobile-position">
+                <div class="container check-card-mobile-wrapper">
+                    {% include "public/user/html/partials/loan-eligibility.html" %}
+                </div>
+                <div class="container eligibility-section-wrapper">
+                    <h2 class="content-title mt-4 pt-4">
+                        Education Loan Eligibility Requirements
+                    </h2>
+                    <p class="mb-4">
+                        If you are an Indian student who has recently graduated and are planning to pursue higher education abroad, you may find yourself in need of financial
+                        assistance to cover the cost of tuition, accommodation, and living expenses. This is where education loans come in, providing you with the necessary funds
+                        to fulfil your dreams of studying in a foreign country. In this blog, we will discuss the eligibility and requirements for education loans for students
+                        going abroad from India after graduation.
+                    </p>
+                    <h2 class="content-title">Eligibility Criteria</h2>
+                    <ul class="content-list">
+                        <li><b>Indian citizenship:</b> To be eligible for an education loan in India, you must be a citizen of India.</li>
+                        <li><b>Academic record: </b>To qualify for an education loan, you must have a good academic record. You must have completed your graduation from a recognized university with a good
+                            grade point average (GPA).</li>
+                        <li>
+                            <b>Age: </b>Most banks and financial institutions offer education loans to students between the ages of 18 to 35 years. Howe some lenders may have different age
+                            requirements, so it's essential to check with your lender.
+                        </li>
+                        <li>
+                            <b>Admission to a foreign university: </b>You must have secured admission to a recognized foreign university and provide the necessary documents as proof of admission.
+                        </li>
+                        <li>
+                            <b>Co-borrower</b>Most lenders require a co-borrower, usually a parent or guardian, to apply for an education loan. The co-borrower must have a good credit history and be
+                            willing to take on the responsibility of repaying the loan if the borrower is unable to do so.
+                        </li>
+                    </ul>
+                    <h2 class="mb-3 content-title">Requirements</h2>
+                    <ul class="content-list">
+                        <li><b>Application Form: </b>The first step in applying for an education loan is to fill out the application form.</li>
+                        <li><b>Documents Required: </b>You will need to submit a set of documents, including your academic records, proof of admission to the foreign university, passport, and visa documents,
+                            among others. It's best to check with your lender regarding the exact documents required.</li>
+                        <li>
+                            <b>Loan Amount: </b>You can apply for an education loan for the full cost of tuition, accommodation, and living expenses. However, the loan amount may be limited by the
+                            lender
+                            based on factors such as your academic record, the course you have applied for, and the university you will be attending.
+                        </li>
+                        <li>
+                            <b>Interest Rates and Repayment: </b>Education loans have different interest rates depending on the lender, and you will need to repay the loan with interest over a set period. The
+                            repayment
+                            period usually starts six months after the completion of the course, and the repayment term can be up to 15 years.
+                        </li>
+                    </ul>
+                    <p>In conclusion, education loans provide Indian students with an excellent opportunity to pursue their dreams of studying
+                        abroad.
+                        However, it's essential to carefully review the eligibility criteria and requirements of different lenders and choose a loan that suits your needs and
+                        budget. With the right education loan, you can make your dream of studying abroad a reality.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container my-4 offer-wrapper">
+            <div class="show-mobile">
+                <img src="/images/airplane-mobile.png" alt="EaseMyTrip" class="w-100">
+            </div>
+            <img src="/images/airplane.png" alt="EaseMyTrip" class="mw-100 hide-mobile">
+            <div class="offer hide-mobile">
+                <img src="/images/emt.png" alt="EaseMyTrip" class="offer-logo">
+                <h4 class="offer-title">
+                    EaseMyTrip Offers ₹1000 Worth Gift Voucher Free
+                </h4>
+                <p class="offer-caption">
+                    On flight bookings with every EpiCred disbursements. <br>
+                    Along with one International Airport Lounge Access.
+        
+                </p>
+            </div>
+        </div>
+    </main>
+    {% include "public/user/html/partials/footer_v1.html" %}
+    {% include "public/user/html/partials/scripts.html" %}
+    <script src="/user/js/check-loan-eligibility.js"></script>
+    <script src="/user/js/loan-eligibility.js"></script>
+</body>
+
+</html>

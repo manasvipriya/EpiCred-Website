@@ -1,0 +1,78 @@
+.section {
+    padding: 30px 0;
+    position: relative;
+}
+
+
+.check-card {
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px 0px #0000001F;
+    border: none;
+}
+
+.bg-wrapper {
+    background-image: url(/images/check-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+}
+
+.check-card-wrapper {
+    padding: 70px 0;
+}
+
+.title-wrapper {
+    padding: 50px 0 50px 0;
+}
+
+.content-title {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+.content-list {
+    padding-left: 20px;
+}
+
+.content-list li {
+    margin: 20px 0;
+}
+
+.check-card-mobile-wrapper {
+    display: none;
+}
+
+@media screen and (max-width: 1024px) {
+    .title-wrapper {
+        padding: 20px 0;
+    }
+
+    .check-card-wrapper {
+        padding-bottom: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+ 
+}
+
+@media screen and (max-width: 480px) {
+    .check-card-wrapper {
+        display: none;
+    }
+
+    .check-card-mobile-wrapper {
+        display: block;
+    }
+
+    .bg-wrapper-mobile {
+        background-image: url(/images/check-bg.png);
+        background-repeat: no-repeat;
+        background-size: 100%;
+    }
+
+    .mobile-position {
+        position: relative;
+        top: 100px;
+        margin-bottom: 140px;
+    }
+}

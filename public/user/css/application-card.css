@@ -1,0 +1,54 @@
+
+.application-card {
+    border-radius: 20px;
+    box-shadow: 4px 4px 12px 0px #0000000F;
+    font-size: 14px;
+}
+
+.application-card-status {
+    cursor: pointer;
+    margin-top: 15px;
+}
+
+.application-card-status .fa {
+    font-size: 10px;
+    position: relative;
+}
+
+.loan-status-progress-modal ul {
+    list-style-type: none;
+}
+
+.loan-status-progress-icon {
+    font-size: 11px;
+}
+
+.icon {
+    height: 18px;
+    width: auto;
+}
+
+.loan-status-progress-wrapper {
+    z-index: 1;
+}
+
+.hide-application-card-status {
+    cursor: pointer;
+}
+
+.loan-status-progress {
+    position: absolute;
+    background: #F7F9FE;
+    width: 100%;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    display: none;
+    margin-top: 8px;
+}
+
+.loan-status-progress ul {
+    list-style-type: none;
+}

@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>
+      epicred - Empowering Dreams, Eliminating Financial Barriers: Your Path to
+      a Dream Career Starts Here
+    </title>
+    <meta
+      name="description"
+      content="Empowering Your Dreams of Studying Abroad with Tailored Funding Solutions. Unlock a World of Opportunities in International Education with Our Trusted Support. Start Your Global Journey Today!"
+    />
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link rel="stylesheet" href="/common/css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="/common/css/owl.theme.default.css" />
+    <link
+      href="/user/css/index.css"
+      rel="stylesheet"
+      media="none"
+      onload="if(media!=='all')media='all'"
+    />
+    <link href="/user/css/emi-calculator.css" rel="stylesheet" />
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Verdana, sans-serif;
+      }
+      .homeCarousel {
+        display: none;
+      }
+      img {
+        vertical-align: middle;
+      }
+
+      .slideshow-container {
+        width: 100%;
+      }
+
+      .prev,
+      .next {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        width: auto;
+        padding: 16px;
+        margin-top: -22px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        transition: 0.6s ease;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+      }
+
+      .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+      }
+
+      .prev:hover,
+      .next:hover {
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .dot {
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+      }
+
+      @media only screen and (max-width: 300px) {
+        .prev,
+        .next,
+        .text {
+          font-size: 11px;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    {% include "public/user/html/partials/header.html" %}
+    <main>
+      <div class="home-bg-wrapper">
+        <div class="container-fluid p-0 position-relative">
+          <div class="slideshow-container">
+            <div class="homeCarousel">
+              <img src="/images/background1.jpg" style="width: 100%" />
+            </div>
+
+            <div class="homeCarousel">
+              <img src="/images/background2.jpeg" style="width: 100%" />
+            </div>
+
+            <div class="homeCarousel">
+              <img src="/images/background3.jpg" style="width: 100%" />
+            </div>
+
+            <a class="next" onclick="plusSlides(1)">❯</a>
+          </div>
+          <section class="row align-items-center banner-section">
+            <div
+              class="col-xl-6 col-lg-6 col-md-7 col-sm-12 mb-4 banner-content"
+            >
+              <h1 class="banner-heading">
+                Where every colorful dream of studying abroad finds funding
+              </h1>
+              <p class="banner-caption">
+                Stop wasting time and money - EpiCred helps you find the best
+                deal possible on your Education Loans
+              </p>
+              <div class="get-started-container">
+                <a
+                  class="btn btn-primary px-4 mb-1"
+                  href="/check-loan-eligibility"
+                  title="Check Loan Eligibility"
+                  >Get started</a
+                >
+              </div>
+            </div>
+          </section>
+          <!-- <div class="col-12 d-flex justify-content-center banner-rating-images-wrapper-parent">
+                    <div class="banner-rating-images-wrapper">
+                        <div class="banner-rating-images">
+                            <img src="/images/sudha.png" alt="rating 1" height="50" width="50">
+                            <img src="/images/annish.png" alt="rating 1" height="50" width="50">
+                            <img src="/images/sahil.png" alt="rating 1" height="50" width="50">
+                            <span class="ml-1 font-bold text-white">+</span>
+                        </div>
+                        <p class="m-0 font-14 text-white"><b>3k+</b> Loans Facilitated</p>
+                    </div>
+                </div> -->
+          <div class="banner-rating-wrapper">
+            <div class="banner-rating">
+              <div class="d-flex justify-content-center banner-rating-stars">
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+                <i class="fa fa-star"></i>
+              </div>
+              <p class="m-0 font-14 text-white"><b>4.8</b> Customer Ratings</p>
+            </div>
+          </div>
+          <div class="usp-wrapper">
+            <div class="reasons-card">
+              <img
+                src="/images/cat_roi.png"
+                alt="ROI"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <div class="description">
+                <h3 class="reasons-card-title">ROI from 8.5%</h3>
+                <p class="reasons-card-caption">
+                  We assure you of the best ROI on your education loan.
+                </p>
+              </div>
+            </div>
+            <div class="reasons-card">
+              <img
+                src="/images/cat_wallet.png"
+                alt="Zero Charges"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <div class="description">
+                <h3 class="reasons-card-title">Zero Charges</h3>
+                <p class="reasons-card-caption">
+                  No additional costs or hidden charges.
+                </p>
+              </div>
+            </div>
+            <div class="reasons-card">
+              <img
+                src="/images/cat_sanctions.png"
+                alt="Fast Sanctions"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <div class="description">
+                <h3 class="reasons-card-title">Fast Sanctions</h3>
+                <p class="reasons-card-caption">
+                  We guarantee a decision on your loan application within three
+                  business days.
+                </p>
+              </div>
+            </div>
+            <div class="reasons-card">
+              <img
+                src="/images/cat_disbursals.png"
+                alt="Quick Disbursals"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <div class="description">
+                <h3 class="reasons-card-title">Quick Disbursals</h3>
+                <p class="reasons-card-caption">
+                  Initiate the disbursement process on the same day as the
+                  sanction or according to your convenience.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- emt offer start -->
+
+      <!-- emt offer end -->
+
+      <!-- reasons section start -->
+      <div class="container custom-container choose-wrapper">
+        <section class="row reasons-section section">
+          <div class="col-12">
+            <h2 class="section-heading">Why choose EpiCred?</h2>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="reasons-card">
+              <img
+                src="/images/cat_roi.png"
+                alt="ROI"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <h3 class="reasons-card-title">ROI from 8.5%</h3>
+              <p class="reasons-card-caption">
+                We assure you of the best ROI on your education loan.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="reasons-card">
+              <img
+                src="/images/cat_wallet.png"
+                alt="Zero Charges"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <h3 class="reasons-card-title">Zero Charges</h3>
+              <p class="reasons-card-caption">
+                No additional costs or hidden charges.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="reasons-card">
+              <img
+                src="/images/cat_sanctions.png"
+                alt="Fast Sanctions"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <h3 class="reasons-card-title">Fast Sanctions</h3>
+              <p class="reasons-card-caption">
+                We guarantee a decision on your loan application within three
+                business days.
+              </p>
+            </div>
+          </div>
+          <div class="col-xl-3 col-lg-3 col-md-3 col-sm-12">
+            <div class="reasons-card">
+              <img
+                src="/images/cat_disbursals.png"
+                alt="Quick Disbursals"
+                class="reasons-img"
+                loading="lazy"
+              />
+              <h3 class="reasons-card-title">Quick Disbursals</h3>
+              <p class="reasons-card-caption">
+                Initiate the disbursement process on the same day as the
+                sanction or according to your convenience.
+              </p>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!-- reasons section start -->
+
+      <!-- lending partners section start -->
+      <div class="lending-partners-wrapper">
+        <div class="container">
+          <section class="section-lending row">
+            <div class="col-12">
+              {% include "public/user/html/partials/lending-partners.html" %}
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- lending partners section start -->
+
+      <!-- services section start -->
+      <div class="bg-container-overlay">
+        <div class="container">
+          <section class="services-section row section">
+            <div class="col-12 mb-4">
+              <p class="mb-3 font-bold service-title">Our Services</p>
+            </div>
+            <div class="col-12">
+              <div class="row service-card d-flex align-items-center">
+                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12">
+                  <img
+                    src="/images/service-one.png"
+                    alt="Graduate Education Loan"
+                    class="service-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                  <h2 class="service-title">Graduate Education Loan</h2>
+                  <p>
+                    If you are an Indian student who has recently graduated and
+                    are planning to pursue higher education abroad, you may find
+                    yourself in need of financial assistance to cover the cost
+                    of tuition, accommodation, and living expenses.
+                  </p>
+                  <div class="text-decoration-none">
+                    <a href="/graduation-loan">
+                      Learn More <i class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="row service-card d-flex align-items-center">
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                  <h2 class="service-title">Education Loan Refinance</h2>
+                  <p>
+                    Student loans can be a significant burden for graduates as
+                    they can often take years to pay off. However, efinancing
+                    existing student loans can be an effective way to reduce
+                    monthly payments and save money.
+                  </p>
+                  <div class="text-decoration-none">
+                    <a href="/education-loan-refinance">
+                      Learn More <i class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12">
+                  <img
+                    src="/images/service-two.png"
+                    alt="Education Loan Refinance"
+                    class="service-image"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+              <div class="row service-card d-flex align-items-center">
+                <div class="col-xl-7 col-lg-7 col-md-6 col-sm-12">
+                  <img
+                    src="/images/service-three.png"
+                    alt="Domestic Education Loans"
+                    class="service-image"
+                    loading="lazy"
+                  />
+                </div>
+                <div class="col-xl-5 col-lg-5 col-md-6 col-sm-12">
+                  <h2 class="service-title">Domestic Education Loans</h2>
+                  <p>
+                    Commonly offered by banks and financial institutions to help
+                    them pursue higher education in India or abroad. These loans
+                    can cover tuition fees, accommodation expenses, study
+                    materials, and other related costs.
+                  </p>
+                  <div class="text-decoration-none">
+                    <a href="/domestic-education-loans">
+                      Learn More <i class="fa fa-arrow-right"></i>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- services section start -->
+
+      <!-- emi calculator section start-->
+      <div class="emi-section">
+        <div class="container">
+          <div class="calculator-card home-page-calculator">
+            <div class="title-wrapper">
+              <h1 class="title text-center">Loan Repayment Calculator</h1>
+              <p class="m-0 text-center">
+                The displayed EMI amount is approximate & is subject to change
+                based on various factors.
+              </p>
+            </div>
+            <div class="row calculator">
+              <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                <div class="form-group mb-4">
+                  <label class="mb-0 d-flex justify-content-between">
+                    <h6 class="font-16 font-normal">Loan Amount</h6>
+                    <span class="font-bold">
+                      ₹<input
+                        type="number"
+                        class="cal-long-text"
+                        id="loanAmountValue"
+                        value="{{intial_data.loanAmount.value}}"
+                      />
+                    </span>
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range w-100"
+                    id="loanAmount"
+                    data-value="#loanAmountValue"
+                    value="{{intial_data.loanAmount.value}}"
+                    min="{{intial_data.loanAmount.min}}"
+                    max="{{intial_data.loanAmount.max}}"
+                    step="{{intial_data.loanAmount.step}}"
+                  />
+                </div>
+                <div class="form-group mb-4">
+                  <label class="mb-0 d-flex justify-content-between">
+                    <h6 class="font-16 font-normal">Interest(p.a.)</h6>
+                    <span class="font-bold">
+                      <input
+                        type="number"
+                        class="cal-short-text"
+                        id="interestValue"
+                        value="{{intial_data.interest.value}}"
+                      />
+                      <span class="text-muted font-14">%</span>
+                    </span>
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range w-100"
+                    id="interest"
+                    data-value="#interestValue"
+                    value="{{intial_data.interest.value}}"
+                    min="{{intial_data.interest.min}}"
+                    max="{{intial_data.interest.max}}"
+                  />
+                </div>
+                <div class="form-group mb-4">
+                  <label class="mb-0 d-flex justify-content-between">
+                    <h6 class="font-16 font-normal">Loan Duration</h6>
+                    <span class="font-bold">
+                      <input
+                        type="number"
+                        class="cal-short-text"
+                        id="loanDurationValue"
+                        value="{{intial_data.loanDuration.value}}"
+                      />
+                      <span class="text-muted font-14">Years</span>
+                    </span>
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range w-100"
+                    id="loanDuration"
+                    data-value="#loanDurationValue"
+                    value="{{intial_data.loanDuration.value}}"
+                    min="{{intial_data.loanDuration.min}}"
+                    max="{{intial_data.loanDuration.max}}"
+                  />
+                </div>
+                <div class="form-group mb-4">
+                  <label class="mb-0 d-flex justify-content-between">
+                    <h6 class="font-16 font-normal">Course Duration</h6>
+                    <span class="font-bold">
+                      <input
+                        type="number"
+                        class="cal-short-text"
+                        id="courseDurationValue"
+                        value="{{intial_data.courseDuration.value}}"
+                      />
+                      <span class="text-muted font-14">Months</span>
+                    </span>
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range w-100"
+                    id="courseDuration"
+                    data-value="#courseDurationValue"
+                    value="{{intial_data.courseDuration.value}}"
+                    min="{{intial_data.courseDuration.min}}"
+                    max="{{intial_data.courseDuration.max}}"
+                  />
+                </div>
+                <div class="form-group mb-1">
+                  <label class="mb-0 d-flex justify-content-between">
+                    <h6 class="font-16 font-normal">Grace Period</h6>
+                    <span class="font-bold">
+                      <input
+                        type="number"
+                        class="cal-short-text"
+                        id="gracePeriodValue"
+                        value="{{intial_data.gracePeriod.value}}"
+                      />
+                      <span class="text-muted font-14">Months</span>
+                    </span>
+                  </label>
+                  <input
+                    type="range"
+                    class="form-range w-100"
+                    id="gracePeriod"
+                    data-value="#gracePeriodValue"
+                    value="{{intial_data.gracePeriod.value}}"
+                    min="{{intial_data.gracePeriod.min}}"
+                    max="{{intial_data.gracePeriod.max}}"
+                  />
+                </div>
+              </div>
+              <div
+                class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12 calculator-result-container hide-mobile"
+              >
+                <div class="row calculator-result pl-4">
+                  <div
+                    class="col-xl-7 col-lg-7 col-md-12 col-12 form-group d-flex flex-column mb-4"
+                  >
+                    <div class="legend">
+                      <span class="dot principal"></span>
+                      <span>Principle Amount</span>
+                    </div>
+                    <div class="legend">
+                      <span class="dot interest"></span>
+                      <span>Total Interest</span>
+                    </div>
+                  </div>
+                  <div
+                    class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column"
+                  >
+                    <label class="mb-0 font-16">Principal Amount</label>
+                    <label
+                      class="font-bold amount-text principalAmount"
+                      id="principalAmount"
+                      >₹ 100000</label
+                    >
+                  </div>
+                  <div
+                    class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column"
+                  >
+                    <label class="mb-0 font-16">Total Interest</label>
+                    <label
+                      class="font-bold amount-text totalInterestCharged"
+                      id="totalInterestCharged"
+                      >₹ 100000</label
+                    >
+                  </div>
+                  <div
+                    class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column"
+                  >
+                    <label class="mb-0 font-16">Total Amount</label>
+                    <label
+                      class="font-bold amount-text totalAmount"
+                      id="totalAmount"
+                      >₹ 100000</label
+                    >
+                  </div>
+                  <div
+                    class="col-xl-7 col-lg-7 col-md-6 col-6 form-group d-flex flex-column"
+                  >
+                    <label class="mb-0 font-16">Monthly EMI</label>
+                    <label
+                      class="font-bold amount-text emiPerMonth"
+                      id="emiPerMonth"
+                      >₹ 35,123</label
+                    >
+                  </div>
+                </div>
+              </div>
+              <div
+                class="col-xl-4 col-lg-4 col-md-12 col-sm-6 col-12 chart-wrapper"
+              >
+                <div id="chart"></div>
+                <div class="col-12 form-group d-flex flex-row mb-4 show-mobile">
+                  <div class="legend">
+                    <span class="dot principal"></span>
+                    <span>Principle Amount</span>
+                  </div>
+                  <div class="legend ml-4">
+                    <span class="dot interest"></span>
+                    <span>Total Interest</span>
+                  </div>
+                </div>
+                <div class="col-12 text-center hide-mobile">
+                  <a
+                    href="/check-loan-eligibility"
+                    class="btn btn-primary px-4 py-2 font-14"
+                    >Apply Now</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="show-mobile">
+            <div class="row calculator-result-mobile">
+              <div class="col-5 mb-3">
+                <label for="" class="font-13 mb-0">Principal Amount</label>
+                <p class="m-0 font-13 font-bold principalAmount">100000</p>
+              </div>
+              <div class="col-2 d-flex justify-content-center">
+                <div class="end-border"></div>
+              </div>
+              <div class="col-5 mb-3">
+                <label for="" class="font-13 mb-0">Total Interest</label>
+                <p class="m-0 font-13 font-bold totalInterestCharged">100000</p>
+              </div>
+              <div class="col-5 mb-3">
+                <label for="" class="font-13 mb-0">Total Amount</label>
+                <p class="m-0 font-13 font-bold totalAmount">100000</p>
+              </div>
+              <div class="col-2 d-flex justify-content-center">
+                <div class="end-border"></div>
+              </div>
+              <div class="col-5 mb-3">
+                <label for="" class="font-13 mb-0">Monthly EMI</label>
+                <p class="m-0 font-13 font-bold emiPerMonth">100000</p>
+              </div>
+              <div class="col-12 text-center mt-3">
+                <a
+                  class="btn btn-primary btn-block px-4 py-2 font-15"
+                  href="/check-loan-eligibility"
+                >
+                  Apply Now
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- emi calculator section ends -->
+
+      <!-- tools section start -->
+      <!-- <div class="tools-wrapper">
+            <div class="container">
+                <section class="tools-section row">
+                    <div class="col-12 mb-4">
+                        <p class="mb-1 font-bold h2" >Our Tools</p>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <a href="/repayment-calculator" class="card border-0 tool-card px-4 pt-3 pb-2" title="Repayment Calculator">
+                            <p class="font-bold mb-1 tool-heading">Repayment <br>Calculator</p>
+                            <div class="text-right">
+                                <span class="text-white tool-icon">&#8599;</span>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
+                        <a href="/check-loan-eligibility" class="card border-0 tool-card px-4 pt-3 pb-2" title="Check Loan Eligibility">
+                            <p class="font-bold mb-1 tool-heading">Check Loan <br>Eligibility</p>
+                            <div class="text-right">
+                                <span class="text-white tool-icon">&#8599;</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </div> -->
+      <!-- tools section start -->
+
+      <!-- about section start -->
+      <div class="about-wrapper">
+        <div
+          class="container owl-carousel owl-theme about-carousel"
+          id="aboutCarousel"
+        >
+          <div class="about">
+            <div class="row">
+              <div class="col-8">
+                <h2 class="about-title section-heading text-left">Our Story</h2>
+              </div>
+              <div class="col-4 d-flex justify-content-end">
+                <img
+                  src="/images/about-next.png"
+                  alt="Next"
+                  class="about-next dir-icon"
+                />
+              </div>
+              <div class="col-12 about-border"></div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                Founded in 2022, our first office was a park in sector 34, where
+                we did tele calling to Immigration consultants for potential
+                clients and later on visited consultants across states to build
+                our network. We have been profitable from the beginning having
+                disbursed loans over 8 crores in our first four months.
+              </div>
+            </div>
+          </div>
+          <div class="about">
+            <div class="row">
+              <div class="col-8">
+                <h2 class="about-title section-heading text-left">
+                  Our Vision for the year 2023
+                </h2>
+              </div>
+              <div class="col-4 d-flex justify-content-end">
+                <img
+                  src="/images/about-next.png"
+                  alt="Next"
+                  class="about-next dir-icon"
+                />
+              </div>
+              <div class="col-12 about-border"></div>
+            </div>
+            <div class="row">
+              <div class="col-12">
+                2023 is going to be a breakthrough year for us, we are going to
+                create an online marketplace and increase our social media
+                presence. We are targeting disbursals over 60 crore rupees in
+                2023.To achieve our target we are increasing our lending
+                partners and intend to focus on students planning their studies
+                in the United States.
+              </div>
+            </div>
+          </div>
+          <div class="about">
+            <div class="row">
+              <div class="col-8">
+                <h2 class="about-title section-heading text-left">
+                  What we are about
+                </h2>
+              </div>
+              <div class="col-4 d-flex justify-content-end">
+                <img
+                  src="/images/about-next.png"
+                  alt="Next"
+                  class="about-next dir-icon"
+                />
+              </div>
+              <div class="col-12 about-border"></div>
+            </div>
+            <div class="row">
+              <div class="col-6">
+                We aim to make student loans quick and hassle free for Indians
+                many students especially in tier 2 and tier 3 cities are unaware
+                of the fact that they can get an education loan without
+                collateral and they need not visit any bank for that.
+              </div>
+              <div class="col-6">
+                We at EpiCred not only make the entire process easy but also
+                negotiate the best deal without extra charges. We want to make
+                sure that no student will give up hope on getting quality
+                education due to financial limitation.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- about section end -->
+
+      <!-- benefits section start -->
+      <div class="benefits-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 text-center">
+              <h2 class="section-heading">EpiCred Benefits</h2>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 benefit-card">
+              <img src="/images/benefit-one.png" alt="Time Saving" />
+              <h4 class="benefit-title">Time Saving</h4>
+              <p class="benefit-caption">
+                Our experts evaluate student's profile and apply only to banks
+                from where the loan could be sanctioned, saving time and effort.
+              </p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 benefit-card">
+              <img src="/images/benefit-two.png" alt="Documents Pickup" />
+              <h4 class="benefit-title">Documents Pickup</h4>
+              <p class="benefit-caption">
+                At EpiCred, we offer doorstep pickup of documents. The students
+                are not required to make any branch visits in the process.
+              </p>
+            </div>
+            <div class="col-xl-4 col-lg-4 col-md-6 col-12 benefit-card">
+              <img
+                src="/images/benefit-three.png"
+                alt="Disbursement Guarantee"
+              />
+              <h4 class="benefit-title">Disbursement Guarantee</h4>
+              <p class="benefit-caption">
+                We at EpiCred, thoroughly check and assess your documents before
+                login, if the file is logged in we provide disbursement.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- benefits section end -->
+
+      <!-- testimonials section start -->
+      <div class="testimonial-wrapper">
+        <div class="container">
+          <div class="row d-flex align-items-center testimonial-header">
+            <div class="col-8">
+              <h2 class="section-heading text-left m-0">
+                Hear from our Students
+              </h2>
+            </div>
+            <div class="col-4 d-flex justify-content-end">
+              <img
+                src="/images/about-next.png"
+                alt="prev"
+                class="testimonial-prev dir-icon"
+              />
+              <img
+                src="/images/about-next.png"
+                alt="next"
+                class="testimonial-next ml-2 dir-icon"
+              />
+            </div>
+          </div>
+          <section class="row">
+            <div class="col-12">
+              <div class="row owl-carousel testimonial-carousel">
+                {% for item in data.testimonials %}
+                <div class="col-12">
+                  <div class="testimonial card p-3">
+                    <div class="testimonial-text mt-2">{{item.content}}</div>
+                    <div class="testimonial-border"></div>
+                    <div class="testimonial-user">
+                      <img
+                        class="testimonial-user-picture"
+                        src="{{item.picture}}"
+                        alt="{{item.name}} - {{item.university}}"
+                        loading="lazy"
+                      />
+                      <div class="testimonial-user-info">
+                        <p class="testimonial-user-name m-0">{{item.name}}</p>
+                        <p class="testimonial-user-university m-0">
+                          {{item.university}}
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                {% endfor %}
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- testimonials section end -->
+
+      <!-- faq section start -->
+      <div itemscope itemtype="https://schema.org/FAQPage">
+        <div class="container">
+          <section class="section row">
+            <div class="col-xl-1 col-lg-1 col-12 mb-4">
+              <p class="m-0 font-bold h2">FAQ</p>
+            </div>
+            <div class="col-xl-11 col-lg-11 col-12">
+              <ul class="accordion-list">
+                <li
+                  itemscope
+                  class="faq-item"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
+                >
+                  <div class="d-flex justify-content-between">
+                    <h3 itemprop="name">
+                      Can I get education loan without collateral for studies
+                      abroad?
+                    </h3>
+                    <i class="fa fa-plus accordion-icon"></i>
+                    <i class="fa fa-minus accordion-icon"></i>
+                  </div>
+                  <div
+                    class="answer"
+                    itemscope
+                    itemprop="acceptedAnswer"
+                    itemtype="https://schema.org/Answer"
+                  >
+                    <p itemprop="text">
+                      Yes, you can get education loan without collateral. Non
+                      collateral education loans are dependent on various
+                      factors such as income of the co applicant, Ranking of the
+                      university, Average academic scores etc. In order to know
+                      whether you are eligible for non collateral education
+                      loan.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  itemscope
+                  class="faq-item"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
+                >
+                  <div class="d-flex justify-content-between">
+                    <h3 itemprop="name">
+                      Is living expenses covered in education loans?
+                    </h3>
+                    <i class="fa fa-plus accordion-icon"></i>
+                    <i class="fa fa-minus accordion-icon"></i>
+                  </div>
+                  <div
+                    class="answer"
+                    itemscope
+                    itemprop="acceptedAnswer"
+                    itemtype="https://schema.org/Answer"
+                  >
+                    <p itemprop="text">
+                      Yes, the cost of living for entire duration of course can
+                      be covered in education loan.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  itemscope
+                  class="faq-item"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
+                >
+                  <div class="d-flex justify-content-between">
+                    <h3 itemprop="name">
+                      Can education loan be transferred from one bank to
+                      another?
+                    </h3>
+                    <i class="fa fa-plus accordion-icon"></i>
+                    <i class="fa fa-minus accordion-icon"></i>
+                  </div>
+                  <div
+                    class="answer"
+                    itemscope
+                    itemprop="acceptedAnswer"
+                    itemtype="https://schema.org/Answer"
+                  >
+                    <p itemprop="text">
+                      Yes, education loan can be transferred from one bank to
+                      another. Transferring your loan from one bank to another
+                      can help you reduce interest rate on your loan and save
+                      money.
+                    </p>
+                  </div>
+                </li>
+                <li
+                  itemscope
+                  class="faq-item"
+                  itemprop="mainEntity"
+                  itemtype="https://schema.org/Question"
+                >
+                  <div class="d-flex justify-content-between">
+                    <h3 itemprop="name">
+                      How much time does it take to get education loan?
+                    </h3>
+                    <i class="fa fa-plus accordion-icon"></i>
+                    <i class="fa fa-minus accordion-icon"></i>
+                  </div>
+                  <div
+                    class="answer"
+                    itemscope
+                    itemprop="acceptedAnswer"
+                    itemtype="https://schema.org/Answer"
+                  >
+                    <p itemprop="text">
+                      students can get education loan in 7-21 days.
+                    </p>
+                  </div>
+                </li>
+                <!-- <li itemscope class="faq-item" itemprop="mainEntity" itemtype="https://schema.org/Question">
+                                <div class="d-flex justify-content-between">
+                                    <h3 itemprop="name">Can I get an education loan without collateral?</h3>
+                                    <i class="fa fa-plus accordion-icon"></i>
+                                    <i class="fa fa-minus accordion-icon"></i>
+                                </div>
+                                <div class="answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+                                    <p itemprop="text">
+                                        Yes, you can get an education loan without collateral and our team
+                                        will help you in getting one.
+                                    </p>
+                                </div>
+                            </li> -->
+              </ul>
+            </div>
+          </section>
+        </div>
+      </div>
+      <!-- faq section end -->
+
+      <!-- blogs section start -->
+      <div class="container">
+        <section class="section-blogs row">
+          <div class="col-12 mb-4">
+            <h2 class="text-center mb-4 section-heading">Read Our Blogs</h2>
+          </div>
+          {% for blog in data.blogs %}
+          <div class="col-xl-4 col-lg-4 col-md-6 col-12 mb-4">
+            <div class="card blog">
+              <div class="card-body">
+                <h3 class="card-title blog-title" title="{{blog.title | safe}}">
+                  {{blog.title | safe}}
+                </h3>
+                <p class="blog-description" title="{{blog.description | safe}}">
+                  {{blog.description | safe}}
+                </p>
+                <a
+                  href="{{blog.url}}"
+                  target="_blank"
+                  class=""
+                  title="{{blog.title | safe}}"
+                  ><span>Learn More</span> <i class="fa fa-arrow-right"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="text-right col-12">
+            <a
+              href="https://blog.epicred.in"
+              title="epicred blog"
+              class="font-bold view-all-blogs text-decoration-none text-muted"
+              ><span>View all</span> <i class="fa fa-chevron-right"></i>
+            </a>
+          </div>
+        </section>
+      </div>
+      <!-- blogs section end -->
+
+      <!-- queries section start -->
+      <div class="queries-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="section-heading text-left">
+                More Queries? <br />
+                Get in Touch with Us
+              </h2>
+              <p class="mb-4">
+                We are available everyday from 9:00 AM till 5:00 PM
+              </p>
+            </div>
+            <div class="col-12">
+              <div class="row justify-content-end">
+                <div class="col-xl-3 col-lg-4 col-md-6 col-sm-12">
+                  <div class="mb-3 queries-btn-wrapper">
+                    <a
+                      href="tel:{{_contact.phone}}"
+                      class="btn btn-outline-light btn-block px-2"
+                    >
+                      <i class="fa fa-phone"></i>
+                      <span class="ml-2">Call us at {{_contact.phone}}</span>
+                    </a>
+                  </div>
+                  <div class="queries-btn-wrapper">
+                    <a
+                      href="mailto:{{_contact.email}}"
+                      class="btn btn-outline-light btn-block px-2"
+                    >
+                      <i class="fa fa-envelope"></i>
+                      <span class="ml-2">{{_contact.email}}</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- queries section end -->
+    </main>
+
+    {% include "public/user/html/partials/footer_v1.html" %} {% include
+    "public/user/html/partials/scripts.html" %}
+    <script src="/common/js/owl.carousel.min.js"></script>
+    <script src="/user/js/index.js"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="/user/js/emi-calculator.js"></script>
+    <script>
+      let slideIndex = 1;
+      showSlides(slideIndex);
+
+      function plusSlides(n) {
+        showSlides((slideIndex += n));
+      }
+
+      function currentSlide(n) {
+        showSlides((slideIndex = n));
+      }
+
+      function showSlides(n) {
+        let i;
+        let slides = document.getElementsByClassName("homeCarousel");
+
+        if (n > slides.length) {
+          slideIndex = 1;
+        }
+        if (n < 1) {
+          slideIndex = slides.length;
+        }
+
+        for (i = 0; i < slides.length; i++) {
+          slides[i].style.display = "none";
+        }
+        slides[slideIndex - 1].style.display = "block";
+      }
+    </script>
+  </body>
+</html>

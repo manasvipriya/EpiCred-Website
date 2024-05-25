@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- Tell the browser to be responsive to screen width -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Error</title>
+
+    {% include "public/user/html/partials/styles.html" %}
+    <link href="/user/css/index.css" rel="stylesheet">
+</head>
+
+<body>
+
+    {% include "public/user/html/partials/header.html" %}
+    <main class="container d-flex align-items-center justify-content-center">
+        <div class="col-6 error">
+            <div class="card primary-shadow p-4 text-center">
+                <i class="fa fa-info text-danger fa-3x my-2"></i>
+                <p class="text-center m-0">
+                    {{ error.message if error.message else "Error while processing your request. Please try again."}}
+                </p>
+            </div>
+        </div>
+    </main>
+
+    {% include "public/user/html/partials/footer_v1.html" %}
+    {% include "public/user/html/partials/scripts.html" %}
+</body>
+
+</html>

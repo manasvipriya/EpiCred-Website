@@ -1,0 +1,54 @@
+{% macro applicationCard(data) %}
+<div class="col-xl-4 col-lg-4 col-md-6 col-12">
+    <div class="application-card card p-4">
+        <p class="d-flex align-items-center m-0"><img src="/images/graduate-d.png" alt="" class="icon mr-1">&nbsp;<span class="font-bold">{{data.preferredCourse | title}}</span></p>
+        <p class="mb-0">
+            <img src="/images/world-d.png" alt="" class="icon mr-1"></i> {{data.preferredCountry | title}}
+        </p>
+        <p class="m-0">
+            <img src="/images/rupee-d.png" alt="" class="icon mr-1"> {{data.loanAmount }}
+        </p>
+        <hr>
+        <div>
+            Co-applicant Name:<span class="ml-1">{{data.collateralName}}</span>
+        </div>
+        <div>
+            Co-applicant Monthly Income:<span class="ml-1">Rs. {{data.collateralMonthlyIncome}}</span>
+        </div>
+        <div>
+            Loan Status: {{data.status}}
+        </div>
+        <div class="text-right application-card-status text-primary" data-item="{{data.currentStatus | dump}}">
+            <span>View Status Progress <i class="fa fa-arrow-down"></i></span>
+        </div>
+        <div class="loan-status-progress-wrapper">
+            <div class="loan-status-progress">
+                <h6 class="m-0">Loan Status Progress</h6>
+                <div class="mb-3">
+                    <span class="loan-status-progress-icon mr-1">
+                        <i class="fa fa-check-circle text-warning"></i> - Pending
+                    </span>
+                    <span class="loan-status-progress-icon mr-1">
+                        <i class="fa fa-spinner text-warning"></i> - In Progress
+                    </span>
+                    <span class="loan-status-progress-icon mr-1">
+                        <i class="fa fa-check-circle text-success"></i> - Complete
+                    </span>
+                </div>
+                <ul class="p-0">
+                    {% for item in data.currentStatus %}
+                    <li title="{{item.name}} - {{item.text}}">
+                        <i class="loan-status-progress-icon fa {{ 'fa-spinner text-warning' if item.inProgress }} {{ 'fa-check-circle text-success' if item.completed }} {{ 'fa-check-circle text-warning' if not item.completed and not item.inProgress }}"></i>
+                        {{item.name}}
+                    </li>
+                    {% endfor %}
+                </ul>
+                <div class="text-right text-primary hide-application-card-status">
+                    <span>Show Less <i class="fa fa-arrow-up font-12"></i></span>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+{% endmacro %}
